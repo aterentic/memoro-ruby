@@ -9,4 +9,10 @@ describe "About" do
     end
   end
 
+  describe "GET /about" do
+    it "should have title 'Memoro | About'" do
+      visit '/about'
+      expect(page).to have_title('Memoro | About')
+    end
+  end
 end
