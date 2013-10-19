@@ -9,4 +9,14 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Memoro::Application.config.secret_key_base = '112f0bff33775a81d4e023438801367292c93e6df81dfe2d827885c08274ffef25e38f7328e488604894f7eedc630d5931dfe25817beb9cd82fc8d7cb1b7b8b6'
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    File.read(token_file).chomp
+  else
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+Memoro::Application.config.secret_key_base = secure_token
