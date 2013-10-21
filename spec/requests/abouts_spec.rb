@@ -1,24 +1,10 @@
 require 'spec_helper'
 
-describe "About" do
-  describe "GET" do
-    it "should have the content 'Memoro'" do
-      visit about_path
-      expect(page).to have_content('Memoro')
-    end
-  end
+describe "GET About" do
+  subject { page }
+	before { visit about_path }
 
-  describe "GET" do
-		it "should have the content 'Complementing your brain since 2013.'" do
-      visit about_path
-      expect(page).to have_content('Complementing your brain since 2013.')
-    end
-  end
-
-  describe "GET" do
-    it "should have title 'Memoro | About'" do
-      visit about_path
-      expect(page).to have_title('Memoro | About')
-    end
-  end
+  it { should have_content('Memoro') }
+	it { should have_content('Complementing your brain since 2013.') }
+  it { should have_title('Memoro | About') }
 end
