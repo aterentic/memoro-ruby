@@ -5,5 +5,8 @@ class ApplicationController < ActionController::Base
 	include SessionsHelper
 
 	def index
+		if signed_in?
+			redirect_to users_path
+		end
 	end
 end
