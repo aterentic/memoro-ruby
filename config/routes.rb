@@ -1,11 +1,14 @@
 Memoro::Application.routes.draw do
+
+	root "application#index"
+
   resources :users
-	resources :sessions, only: [:new, :create, :destroy]
-	match "/",					{ to: "application#index", via: "get" }
+	resources :sessions, only: [:create, :destroy]
+
 	match "/signup",		{ to: "users#new", via: "get" }
-	match "/signin",		{ to: "sessions#new", via: "get" }
   match '/signout',		{ to: 'sessions#destroy',     via: 'delete' }
   match "/about",			{ to: "about#about", via: "get" }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
