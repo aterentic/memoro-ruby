@@ -1,21 +1,22 @@
 @import "bootstrap";
 
+$font-stack: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+$board-color: #e8d0a6;
+$border-color: #000000;
+$board-name-color: #a6d7e8;
+$note-color: #000000;
+$paper-color: #f1f1b1;
+
 body {
-  background-color: #a0acaa;
-  color: #333;
-	font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  background-color: $board-color;
+  color: $note-color;
+	font: 100% $font-stack;
 }
 
 p, ol, ul, td {
-	font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
-  font-size: 13px;
-  line-height: 18px;
 }
 
 pre {
-  background-color: #eee;
   padding: 10px;
   font-size: 11px;
 }

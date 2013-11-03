@@ -1,3 +1,29 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$border-color: #000000;
+$board-color: #e8d0a6;
+$board-name-color: #a6d7e8;
+
+html {
+	background-color: $board-color;
+}
+
+body {
+	background-color: $board-name-color;
+	width: 36em;
+	padding: 3em;
+	margin: 3em auto auto auto;
+	border: 0.5em solid $border-color;
+	border-radius: 2em;
+}
+
+h1 {
+	font-size: 4em;
+}
+
+input[type='submit'] {
+	display: block;
+	margin-top: 1em;
+}
